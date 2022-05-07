@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "cypress": "^9.6.0"
+    "cypress": "^9.6.0",
+    "cypress-mochawesome-reporter": "^3.0.1"
   },
   "name": "danube-webshop-cypress-tests",
   "description": "",
