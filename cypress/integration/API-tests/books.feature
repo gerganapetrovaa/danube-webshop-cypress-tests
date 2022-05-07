@@ -1,5 +1,5 @@
-Feature: Book's total number and total books rated with one star
-    I want to see the total number of books and number of books rated with one star
+Feature: Book's total number
+    I want to see the total number of books
 
     Scenario: Verifying the total number of books
 
