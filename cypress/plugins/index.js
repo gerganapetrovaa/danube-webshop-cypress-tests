@@ -1,3 +1,7 @@
+const reporter = require('cypress-mochawesome-reporter/plugin');
+const cucumber = require('cypress-cucumber-preprocessor').default
+
 module.exports = (on, config) => {
-    require('cypress-mochawesome-reporter/plugin')(on);
+    reporter(on);
+    on('file:preprocessor', cucumber())
 };
