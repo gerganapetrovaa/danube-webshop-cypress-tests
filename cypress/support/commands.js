@@ -1,0 +1,12 @@
+Cypress.Commands.add('SignUpToApp', () => {
+    cy.visit('/')
+    cy.get('#signup').click()
+    cy.get('#s-name').type('Gergana')
+    cy.get('#s-surname').type('Petrova')
+    cy.get('#s-email').type('gerganapp01@gmail.com')
+    cy.get('#s-password2').type('Test123!')
+    cy.get('#myself').check()
+    cy.get('#privacy-policy').check()
+    cy.get('#register-btn').click()
+    cy.get('#login-message').should('exist')
+})
