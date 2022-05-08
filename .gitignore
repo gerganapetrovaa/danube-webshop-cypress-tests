@@ -4,3 +4,4 @@ cypress/reports
 cypress/videos
 package-lock.json
 .DS_Store
+fixtures
