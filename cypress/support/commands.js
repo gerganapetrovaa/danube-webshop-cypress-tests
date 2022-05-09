@@ -1,19 +1,25 @@
-import { faker } from "@faker-js/faker";
-
-Cypress.Commands.add("SignUpToApp", () => {
-  const randomFirstName = faker.name.firstName();
-  const randomLastName = faker.name.lastName();
-  const randomEmail = faker.internet.email();
-  const randomPassword = faker.internet.password();
-
-  cy.visit("/");
-  cy.get("#signup").click();
-  cy.get("#s-name").type(randomFirstName);
-  cy.get("#s-surname").type(randomLastName);
-  cy.get("#s-email").type(randomEmail);
-  cy.get("#s-password2").type(randomPassword);
-  cy.get("#myself").check();
-  cy.get("#privacy-policy").check();
-  cy.get("#register-btn").click();
-  cy.get("#login-message").should("exist");
-});
+// ***********************************************
+// This example commands.js shows you how to
+// create various custom commands and overwrite
+// existing commands.
+//
+// For more comprehensive examples of custom
+// commands please read more here:
+// https://on.cypress.io/custom-commands
+// ***********************************************
+//
+//
+// -- This is a parent command --
+// Cypress.Commands.add('login', (email, password) => { ... })
+//
+//
+// -- This is a child command --
+// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
+//
+//
+// -- This is a dual command --
+// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
+//
+//
+// -- This will overwrite an existing command --
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })

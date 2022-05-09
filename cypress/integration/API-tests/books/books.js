@@ -14,3 +14,9 @@ Then("I should see a total of {int} books", (count) => {
     expect(response.body.length).to.eql(count);
   });
 });
+
+Then("I should see a total of {int} books with one star rating", (count) => {
+  cy.get("@getBooks").should((response) => {
+    expect(response.body.filter((x) => x.rating === "★☆☆☆☆").length).to.eql(count);
+  });
+});

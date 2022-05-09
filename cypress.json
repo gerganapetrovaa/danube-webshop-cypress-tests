@@ -1,7 +1,5 @@
 {
   "baseUrl": "https://danube-webshop.herokuapp.com/",
-  "viewportWidth": 1200,
-  "viewportHeight": 900,
   "reporter": "cypress-mochawesome-reporter",
   "testFiles": "**/*.{feature,features}"
 }
