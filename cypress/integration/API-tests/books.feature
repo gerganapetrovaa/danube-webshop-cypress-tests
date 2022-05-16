@@ -10,3 +10,8 @@ Feature: Book's total number
 
         When I get all books
         Then I should see a total of 2 books with one star rating
+
+     Scenario: Verifying the total number of books with one and two star rating
+
+        When I get all books
+        Then I should see a total of 4 books with one and two star rating

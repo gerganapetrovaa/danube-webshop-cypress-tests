@@ -9,8 +9,10 @@ Given("I sign up to the site", () => {
 When("I add three products to cart", () => {
   basketPage.goToFirstGenre();
   basketPage.addThreeProductsToCart();
+  basketPage.goToCart();
 });
 
 Then("I should see a total amount of {float}", (amount) => {
+  basketPage.verifySumOfAllProducts(amount);
   basketPage.verifyTotalProductsAmountOnBasket(amount);
 });

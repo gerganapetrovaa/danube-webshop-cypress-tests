@@ -17,6 +17,20 @@ Then("I should see a total of {int} books", (count) => {
 
 Then("I should see a total of {int} books with one star rating", (count) => {
   cy.get("@getBooks").should((response) => {
-    expect(response.body.filter((x) => x.rating === "★☆☆☆☆").length).to.eql(count);
+    expect(response.body.filter((x) => x.rating === "★☆☆☆☆").length).to.eql(
+      count
+    );
   });
+
+  Then(
+    "I should see a total of {int} books with one and two star rating",
+    (count) => {
+      cy.get("@getBooks").should((response) => {
+        expect(
+          response.body.filter((x) => ["★☆☆☆☆", "★★☆☆☆"].includes(x.rating))
+            .length
+        ).to.eql(count);
+      });
+    }
+  );
 });

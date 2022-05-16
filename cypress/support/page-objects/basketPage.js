@@ -7,6 +7,7 @@ export class BasketPage {
     this.addToCartButton = ".call-to-action";
     this.cartIcon = "#cart";
     this.totalPrice = "#total-price";
+    this.productInCart = "#app-content > div > div > ul > li:nth-child(1)";
   }
 
   goToFirstGenre() {
@@ -23,11 +24,20 @@ export class BasketPage {
       cy.go("back");
     }
   }
+  goToCart() {
+    cy.get(this.cartIcon).click();
+  }
 
   verifyTotalProductsAmountOnBasket(amount) {
-    cy.get(this.cartIcon).click();
     cy.url().should("eq", "https://danube-webshop.herokuapp.com/cart");
     cy.get(this.totalPrice).invoke("text").should("eq", amount.toString());
+  }
+
+  verifySumOfAllProducts(amount) {
+    cy.get(this.productInCart)
+      .invoke("text")
+      .then((text) => parseFloat(text.split("$")[1] * 3).toFixed(2))
+      .should("eq", amount.toString());
   }
 }
 
